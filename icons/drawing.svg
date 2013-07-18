@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="256"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="drawing.svg">
+  <defs
+     id="defs4">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3789"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.5"
+     inkscape:cx="128"
+     inkscape:cy="128"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-bbox="false"
+     inkscape:window-width="1570"
+     inkscape:window-height="922"
+     inkscape:window-x="56"
+     inkscape:window-y="21"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-796.36218)">
+    <rect
+       id="rect2999"
+       width="256"
+       height="256"
+       x="0"
+       y="796.36218"
+       style="fill:#0098ff;fill-opacity:1"
+       rx="20" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2985"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion2987"><rect
+           id="rect2989"
+           width="134.62671"
+           height="96.261581"
+           x="35.226158"
+           y="68.70845" /></flowRegion><flowPara
+         id="flowPara2991"></flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:38.4987793px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="34.91114"
+       y="965.27362"
+       id="text2993"
+       sodipodi:linespacing="125%"
+       transform="scale(1.038994,0.96246946)"><tspan
+         sodipodi:role="line"
+         id="tspan2995"
+         x="34.91114"
+         y="965.27362"
+         style="font-size:138.59559631px;fill:#ffffff">C</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3771"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3773"><rect
+           id="rect3775"
+           width="65.569481"
+           height="40.806538"
+           x="83.008171"
+           y="154.85559" /></flowRegion><flowPara
+         id="flowPara3777"></flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:51.29592514px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"
+       x="152.07076"
+       y="789.34387"
+       id="text3779"
+       sodipodi:linespacing="125%"
+       transform="scale(0.77978901,1.2823982)"><tspan
+         sodipodi:role="line"
+         id="tspan3781"
+         x="152.07076"
+         y="789.34387"
+         style="font-size:184.66532898px;fill:#ffffff">L</tspan></text>
+  </g>
+</svg>

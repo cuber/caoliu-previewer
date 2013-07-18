@@ -1,0 +1,49 @@
+{
+  "name": "Caoliu Previewer",
+  "version": "1.0.0.0",
+  "manifest_version": 2,
+  "description": "预览草榴论坛帖子内的图片",
+  "web_accessible_resources": [
+    "galleria/*"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "http://cl.ufree.org/*",
+      "http://1024cl.tk/*",
+      "http://184.154.128.243/*",
+      "http://123.yehuaer.com/*",
+      "http://cl1.wtftw.info/*",
+      "http://cl.man.lv/*",
+      "http://184.154.128.246/*",
+      "http://5.yao.cl/*",
+      "http://zhangfei.info/*",
+      "http://t6y.uni.me/*",
+      "http://xbnsq.com/*",
+      "http://1024.ns01.info/*",
+      "http://1024.ax.lt/*",
+      "http://cl.cn.mu/*",
+      "http://cl.yyq.im/*",
+      "http://cl.cf.gs/*",
+      "http://1024cl.tk/*"
+      ],
+    "js": [
+      "jquery.js",
+      "galleria/galleria-1.2.9.min.js",
+      "caoliu.style.js",
+      "galleria/themes/classic/galleria.classic.min.js",
+      "bootstrap/js/bootstrap.min.js"
+    ],
+    "css": [
+      "caoliu.style.css",
+      "bootstrap/css/bootstrap.css"
+    ],
+    "run_at": "document_idle"
+  }],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "update_url": "https://clients2.google.com/service/update2/crx"
+}
+

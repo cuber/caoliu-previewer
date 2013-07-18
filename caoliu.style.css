@@ -1,0 +1,13 @@
+.preview {
+  color: red;
+}
+
+#galleria {
+  width: 720px;
+}
+
+#galleria .modal-body {
+  padding: 20px 30px;
+  max-height: 600px;
+}
+
