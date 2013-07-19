@@ -27,8 +27,8 @@ $(function() {
       url: href,
       success: function (text) {
         // Find images
-        var images = (function (){
-          var regex = /http:\/\/[^\s<>"]+?\.(png|jpg|jpeg)/ig;
+        var images = (function (text) {
+          var regex = /https?:\/\/[^\s<>"]+?\.(png|jpg|jpeg)/ig;
           var images = {};
           var image;
           while ((image = regex.exec(text)) !== null) {
@@ -44,7 +44,7 @@ $(function() {
           }
 
           return imageSet;
-        })();
+        })(text);
 
         if (images.length == 0) {
           $(_this).html("No images");
@@ -52,7 +52,7 @@ $(function() {
         }
 
         // find torrent download link
-        var torrents = (function () {
+        var torrents = (function (text) {
           var regex = /http:\/\/www\.rmdown.com\/link\.php\?hash=[0-9a-f]+/gi;
           var torrents = {};
           var torrent;
@@ -61,7 +61,7 @@ $(function() {
           }
 
           return torrents;
-        })();
+        })(text);
 
         $('#galleria').remove();
         var modal = $('<div/>', {
