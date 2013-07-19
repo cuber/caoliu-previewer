@@ -1,6 +1,6 @@
 {
   "name": "Caoliu Previewer",
-  "version": "1.0.0.0",
+  "version": "1.0.0.1",
   "manifest_version": 2,
   "description": "预览草榴论坛帖子内的图片",
   "web_accessible_resources": [
