@@ -31,14 +31,13 @@
       "jquery.js",
       "galleria/galleria-1.2.9.min.js",
       "caoliu.style.js",
-      "galleria/themes/classic/galleria.classic.min.js",
-      "bootstrap/js/bootstrap.min.js"
+      "galleria/themes/twelve/galleria.twelve.js"
     ],
     "css": [
-      "caoliu.style.css",
-      "bootstrap/css/bootstrap.css"
+      "caoliu.style.css"
     ],
-    "run_at": "document_idle"
+    "all_frames": true,
+    "run_at": "document_end"
   }],
   "icons": {
     "16": "icons/icon16.png",
