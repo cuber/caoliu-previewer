@@ -31,7 +31,7 @@
       "jquery.js",
       "galleria/galleria-1.2.9.min.js",
       "caoliu.style.js",
-      "galleria/themes/twelve/galleria.twelve.js"
+      "galleria/themes/fullscreen/galleria.fullscreen.js"
     ],
     "css": [
       "caoliu.style.css"

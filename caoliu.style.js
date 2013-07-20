@@ -2,7 +2,7 @@
   var link = document.createElement('link');
   link.rel = 'stylesheet';
   link.href = chrome.extension.getURL(
-      'galleria/themes/twelve/galleria.twelve.css'
+      'galleria/themes/fullscreen/galleria.fullscreen.css'
     );
   document.head.appendChild(link);
 })();
@@ -88,10 +88,13 @@ if (window.frameElement && window.parent) {
     window.parent.$(window.frameElement).data('clPreview').reset();
 
     var $thread = $('body').find('#main .t.t2:eq(0)');
+    var $content = $thread.find('.tpc_content');
+
+    var title = $thread.find('.r_one h4:first').text();
 
     // Find images
     var images = (function (doc) {
-      var regex = /(png|jpg|jpeg)$/ig;
+      var regex = /(png|jpg|jpeg|gif)$/ig;
       var images = {};
       doc.find('img, input[type="image"]').each(function () {
         var url = $(this).attr('src');
@@ -104,12 +107,28 @@ if (window.frameElement && window.parent) {
       var imageSet = [];
       for (var image in images) {
         imageSet.push({
-          image: image
+          image: image,
+          title: '<a href="' + document.location.href + '" target="_blank">' +
+           title + '</a>'
         });
       }
 
+      var filters = [
+          /imagehyper\.com.*\.gif/
+        ];
+
+      imageSet = imageSet.filter(function (item) {
+        for(var i in filters) {
+          if (item.image.match(filters[i])) {
+            return false;
+          }
+        }
+
+        return true;
+      });
+
       return imageSet;
-    })($thread);
+    })($content);
 
     // Find torrents
     var torrents = (function (doc) {
@@ -123,7 +142,7 @@ if (window.frameElement && window.parent) {
       });
 
       return torrents;
-    })($thread);
+    })($content);
 
 
     var thread = {
@@ -132,7 +151,6 @@ if (window.frameElement && window.parent) {
     };
 
     window.parent.$.clPreview(thread);
-
   }
 } else {
   $('tr').each(function () {
@@ -149,10 +167,8 @@ if (window.frameElement && window.parent) {
       init: function () {
         if (!this.existed) {
           var gadget = '<div class="galleria-modal">' +
-                          '<div class="modal-top">' +
-                            '<div class="modal-layer"/>' +
-                            '<div class="modal-body"/>' +
-                          '</div>' +
+                          '<div class="modal-layer"/>' +
+                          '<div class="modal-body"/>' +
                        '</div>';
           this.modal = $(gadget).appendTo($('body')).css({
             position: 'fixed'
@@ -165,14 +181,15 @@ if (window.frameElement && window.parent) {
       show: function (thread) {
         this.init();
         this.modal.show();
-        width = window.innerWidth - 40;
-        height = window.innerHeight - 40;
         Galleria.run('.galleria-modal .modal-body', {
+          dummy: chrome.extension.getURL('galleria/no-error-sign-md.png'),
           height: window.innerHeight,
+          maxScaleRatio: 1,
           dataSource: thread.images,
           transition: "pulse",
-          thumbCrop: "width",
-          imageCrop: !1,
+          thumbCrop: false,
+          thumbQuality: false,
+          imageCrop: 'false',
           carousel: !1,
           easing: "galleriaOut",
           fullscreenDoubleTap: !1,
@@ -184,7 +201,11 @@ if (window.frameElement && window.parent) {
     }
 
     return function (thread) {
-      console.log(JSON.stringify(thread))
+      if (thread.images.length == 0) {
+        CLPreview.current.data('clPreview').noImage();
+        return;
+      }
+
       galleria.show(thread);
     }
   }();
