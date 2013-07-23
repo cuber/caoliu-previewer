@@ -1,7 +1,7 @@
 {
   "name": "__MSG_extName__",
   "default_locale": "en",
-  "version": "1.0.0.2",
+  "version": "1.0.1.0",
   "manifest_version": 2,
   "description": "__MSG_extDesc__",
   "web_accessible_resources": [
@@ -31,6 +31,7 @@
     ],
     "js": [
       "jquery.js",
+      "sender.js",
       "bootstrap/js/bootstrap.js",
       "galleria/galleria-1.2.9.min.js",
       "galleria/themes/fullscreen/galleria.fullscreen.js",
@@ -53,5 +54,6 @@
     "scripts": ["jquery.js", "event.js"],
     "persistent": false
   },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "update_url": "https://clients2.google.com/service/update2/crx"
 }

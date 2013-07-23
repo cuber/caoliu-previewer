@@ -1,13 +1,5 @@
 /* Galleria Fullscreen Theme 2012-04-04 | http://galleria.io/license/ | (c) Aino */
 (function(a) {
-  var copyToClipboard = function(text, done, isHtml) {
-    chrome.runtime.sendMessage({
-      type: 'Copy',
-      content: text,
-      isHtml: isHtml
-    }, done || function() {});
-  }
-
   Galleria.addTheme({
     name: "fullscreen",
     author: "Galleria",
@@ -22,7 +14,8 @@
       _closeOnClick: !1
     },
     init: function(b) {
-      this.addElement("thumbnails-tab"), this.appendChild("thumbnails-container", "thumbnails-tab");
+      this.addElement("thumbnails-tab");
+      this.appendChild("thumbnails-container", "thumbnails-tab");
       this.addElement('exit');
       this.append({
         stage: 'exit'
@@ -181,6 +174,7 @@
 
           var e = t.$(cls).on('click', function() {
             item.action && item.action($(this), data);
+            ga('clt-item', name);
           }).attr('title', item.desc).addClass('galleria-clt-item');
 
           if (!item.hover) {
@@ -306,5 +300,5 @@
       });
 
     }
-  })
+  });
 })(jQuery);

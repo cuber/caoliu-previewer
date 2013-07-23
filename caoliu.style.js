@@ -234,6 +234,7 @@ var onReady = function() {
         thread.prev = current.getPrev();
 
         if (thread.images.length != 0) {
+          ga('show_thread', thread.images.length);
           galleria.show(thread);
         }
 
