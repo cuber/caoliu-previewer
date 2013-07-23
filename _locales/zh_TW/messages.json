@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "草榴相冊",
+    "description": "the extension name"
+  },
+  "extDesc": {
+    "message": "快速預覽草榴帖子內的圖片",
+    "description": "the extension description"
+  },
+  "downloadSearch": {
+    "message": "檔案下載",
+    "description": "search pattern of download setting item"
+  }
+}

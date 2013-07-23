@@ -1,0 +1,14 @@
+{
+  "extName": {
+    "message": "Caoliu gallery",
+    "description": "the extension name"
+  },
+  "extDesc": {
+    "message": "Open caoliu threads in gallery mode",
+    "description": "the extension description"
+  },
+  "downloadSearch": {
+    "message": "Downloads",
+    "description": "search pattern of download setting item"
+  }
+}
