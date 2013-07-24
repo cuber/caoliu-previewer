@@ -5,6 +5,8 @@
     author: "Galleria",
     //css: "galleria.fullscreen.css",
     defaults: {
+      preload: 0,
+      thumbDisplayOrder: false,
       transition: "none",
       imageCrop: !0,
       thumbCrop: "height",
@@ -174,6 +176,9 @@
 
           var e = t.$(cls).on('click', function() {
             item.action && item.action($(this), data);
+            if ($(this).data('tooltip')) {
+              $(this).tooltip('hide');
+            }
             ga('clt-item', name);
           }).attr('title', item.desc).addClass('galleria-clt-item');
 

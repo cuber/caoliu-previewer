@@ -19,3 +19,11 @@ ga = function() {
     }, function() {});
   } catch (e) {}
 }
+
+iframeTransport = function (thread) {
+  chrome.extension.sendMessage({
+    type: 'IFrame',
+    thread: thread
+  }, function () {});
+}
+

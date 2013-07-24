@@ -48,8 +48,11 @@ chrome.extension.onMessage.addListener(function(message, sender, callback) {
       break;
     case 'GA':
       _gaq.push(['_trackEvent'].concat(message.event));
-      callback(true);
+      callback();
       break;
+    case 'IFrame':
+      chrome.tabs.sendMessage(sender.tab.id, message, function (){})
+      callback();
     default:
       callback(true);
       break;
