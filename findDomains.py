@@ -12,8 +12,6 @@ except ImportError:
 import urllib
 import re
 import sys
-import socket
-import threading
 import gflags
 
 class DNSReverse(object):
@@ -54,27 +52,6 @@ class DNSReverse(object):
         self.domains += self.__class__(url = href)(recursive = False)
 
     return list(set(self.domains))
-
-def checkDomain(total_domains):
-  availURIs = []
-  threads = []
-  for domain in total_domains:
-    def target(domain, availURIs):
-      try:
-        sys.stderr.write('Verifying %s\n' % domain)
-        sys.stderr.flush()
-        socket.getaddrinfo(domain, 80)
-        availURIs.append("http://%s/*" % domain)
-      except socket.gaierror:
-        sys.stderr.write('Domain %s is unreachable.\n' % domain)
-
-    thread = threading.Thread(target = target, args = (domain, availURIs))
-    threads.append(thread)
-    thread.start()
-
-  for thread in threads:
-    thread.join()
-
 
 FLAGS = gflags.FLAGS
 
@@ -132,5 +109,4 @@ def main(argv):
 
 if __name__ == '__main__':
   main(sys.argv)
-
 
