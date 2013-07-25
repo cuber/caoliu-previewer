@@ -14,6 +14,7 @@ import re
 import sys
 import socket
 import threading
+import gflags
 
 class DNSReverse(object):
   BASE = "http://dns.aizhan.com/"
@@ -74,7 +75,22 @@ def checkDomain(total_domains):
   for thread in threads:
     thread.join()
 
-def main():
+
+FLAGS = gflags.FLAGS
+
+gflags.DEFINE_bool('apply_to_manifest',
+    False, "Apply the domains to the manifest.", short_name = 'm')
+
+gflags.DEFINE_bool('write_into_file',
+    False, "Write into latestDomains.txt", short_name = 'w')
+
+def main(argv):
+  try:
+    argv = FLAGS(argv)
+  except gflags.FlagsError, e:
+    sys.stderr.write('%s\nUsage: %s ARGS\n%s' % (e, argv[0], FLAGS))
+    sys.exit(1)
+
   ips = ['184.154.128.243',
       '184.154.128.244',
       '184.154.128.245',
@@ -86,11 +102,35 @@ def main():
     sys.stderr.write("Domains of %s: %s\n" % (ip, domains))
     total_domains += domains
 
-  availURIs = ['"http://%s/*"' % domain for domain in set(total_domains)]
+  total_domains += ips
+  total_domains = list(set(total_domains))
+  total_domains.sort()
+
+  availURIs = ['"http://%s/*"' % domain for domain in total_domains]
 
   sys.stderr.write("Caoliu domains: \n")
-  sys.stdout.write(',\n'.join(availURIs))
+  output = ',\n'.join(availURIs)
+
+  if FLAGS.write_into_file:
+    with open('latestDomains.txt', 'w') as f:
+      f.write(output)
+  else:
+    sys.stdout.write(output)
+
+  if FLAGS.apply_to_manifest:
+    with open('manifest.json', 'r+') as f:
+      content = f.read()
+      result = re.search(r'matches.*?\[(.*?)\]',
+          content,
+          re.DOTALL|re.MULTILINE)
+
+      repl = '\n' + ',\n'.join([(" " * 6 + uri) for uri in availURIs])
+      content = content[:result.start(1)] + repl + content[result.end(1):]
+
+      f.seek(0, 0); f.truncate();
+      f.write(content)
 
 if __name__ == '__main__':
-  main()
+  main(sys.argv)
+
 
