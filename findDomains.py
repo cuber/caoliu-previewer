@@ -60,6 +60,9 @@ gflags.DEFINE_bool('apply_to_manifest',
 gflags.DEFINE_bool('write_into_file',
     False, "Write into latestDomains.txt", short_name = 'w')
 
+gflags.DEFINE_list('other_domains',
+    [], "Other domains", short_name = 'a')
+
 def main(argv):
   try:
     argv = FLAGS(argv)
@@ -79,6 +82,7 @@ def main(argv):
     total_domains += domains
 
   total_domains += ips
+  total_domains += FLAGS.other_domains
   total_domains = list(set(total_domains))
   total_domains.sort()
 

@@ -1,7 +1,7 @@
 {
   "name": "__MSG_extName__",
   "default_locale": "en",
-  "version": "1.0.3.0",
+  "version": "1.0.4.0",
   "manifest_version": 2,
   "description": "__MSG_extDesc__",
   "web_accessible_resources": [
@@ -17,6 +17,7 @@
       "http://1024.ns02.biz/*",
       "http://1024.s1.lv/*",
       "http://10240.tk/*",
+      "http://1024cl.tk/*",
       "http://1024dizhi.tk/*",
       "http://1024love.tk/*",
       "http://1024ssl.com/*",
@@ -58,6 +59,7 @@
       "http://love1024.tk/*",
       "http://lovevalen.tk/*",
       "http://m1.sha7.info/*",
+      "http://mumaosan.uk.to/*",
       "http://ping.t66y.com/*",
       "http://t.xbnsq.com/*",
       "http://t1.sha7.info/*",
@@ -72,6 +74,7 @@
       "http://ww.t66y.com/*",
       "http://www.0x557.info/*",
       "http://www.10240.tk/*",
+      "http://www.1024cl.tk/*",
       "http://www.1024dizhi.tk/*",
       "http://www.1024love.tk/*",
       "http://www.365url.tk/*",
