@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-
-"""Query domain names by ipaddr
+"""Find domains of caoliu.
    Requriment: pyquery
 """
 
