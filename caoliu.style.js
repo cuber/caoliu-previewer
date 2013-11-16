@@ -168,16 +168,11 @@ var onReady = function() {
 
         var link = (function() {
           if (url == "http://i218.photobucket.com/albums/cc151/yuuwill/crimg.gif") {
-            var onClick = _this.onclick;
-            if (onClick) {
-              var func = onClick.toString();
-              if (func) {
-                var result;
-                if (result = func.match(/http:\/\/www\.viidii\.com\/\?(.*)&z/)) {
-                  url = result[1].replace(/______/g, '.');
-                  return url;
-                }
-              }
+            var onclick = $(_this).attr('onclick');
+            var result;
+            if (result = onclick.match(/http:\/\/www\.viidii\.com\/\?(.*)&z/)) {
+              url = result[1].replace(/______/g, '.');
+              return url;
             }
           } else {
             return url;
